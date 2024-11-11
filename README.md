@@ -16,3 +16,10 @@ Practice of Bazel for C++
 
     bazel run //:name_in_BUILD
 
+# To gtest a project 
+
+    Under MODULE.bazel add,
+        bazel_dep(name = "googletest",version = "1.15.2")
+
+    # To run gtest
+        bazel test --cxxopt=-std=c++14 --test_output=all //:name_in_BUILD
